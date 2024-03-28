@@ -35,7 +35,7 @@ TaskManager is a simple task management application built with React. It allows 
 - The form fields are cleared using the clearForm function.
 - An alert is displayed to notify the user that the task has been added successfully.
 
-![Screenshot 1](/Images/Addtask.png)
+![Screenshot 1](/Addtask.png)
 
 ## Update Task:
 
