@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# TaskManager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TaskManager is a simple task management application built with React. It allows users to add, edit, and delete tasks, as well as filter tasks based on task title.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- React
+- Bootstrap
+- FontAwesome
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Add new tasks with title, description, priority, and due date
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed or not completed
+- Filter tasks by status (upcoming, overdue, completed)
+- Search tasks by title.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Assumptions
 
-### `npm test`
+- The application assumes that users have basic knowledge of task management concepts.
+- The priority of tasks is categorized as High, Medium, or Low.
+- Tasks can have due dates in the future, but they cannot have past due dates.
+- Users can only edit or delete tasks that they have created.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Add Task:
 
-### `npm run build`
+- When the user fills out the form and submits it, the addTask function is called.
+- This function first prevents the default form submission behavior.
+- It then performs validation to ensure that all required fields (title, description, and due date) are filled out.
+- If validation passes, it checks if the task being added is a new task or an existing task being edited.
+- If it's a new task, a new task object is created with the provided information (title, description, priority, due date, and completion status set to false).
+- The new task is added to the tasks array using the spread operator and set using the setTasks function.
+- The form fields are cleared using the clearForm function.
+- An alert is displayed to notify the user that the task has been added successfully.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Update Task:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- When the user edits an existing task and submits the form, the updateTask function is called.
+- This function first prevents the default form submission behavior.
+- It then updates the task in the tasks array by mapping over all tasks and replacing the task with the matching editTaskId with the updated information.
+- The updated tasks array is saved using the saveTasks function.
+- The form fields are cleared using the clearForm function.
+- The add task form is hidden by setting showAddTaskForm to false.
+- An alert is displayed to notify the user that the task has been updated successfully.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Delete Task:
 
-### `npm run eject`
+- When the user clicks the delete button for a task, the deleteTask function is called with the corresponding task ID.
+- A confirmation dialog is displayed to ensure the user wants to delete the task.
+- If the user confirms the deletion, the task is removed from the tasks array using the filter method.
+- The updated tasks array is saved using the saveTasks function.
+- An alert is displayed to notify the user that the task has been deleted successfully.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Upcoming Tasks:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Tasks with due dates in the future are categorized as upcoming tasks. These tasks are displayed in the task list based on their due dates.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Overdue Tasks:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Tasks with due dates in the past are categorized as overdue tasks. These tasks are displayed in the task list based on their due dates.
 
-## Learn More
+## Completed Tasks:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Tasks that have been marked as completed are categorized as completed tasks. These tasks are displayed separately in the task list or can be filtered to view only completed tasks.
