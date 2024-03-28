@@ -35,7 +35,7 @@ TaskManager is a simple task management application built with React. It allows 
 - The form fields are cleared using the clearForm function.
 - An alert is displayed to notify the user that the task has been added successfully.
 
-![Screenshot 1](/Images/Addtask.png)
+![Screenshot 1](/public/Images/Addtask.png)
 
 ## Update Task:
 
@@ -47,6 +47,8 @@ TaskManager is a simple task management application built with React. It allows 
 - The add task form is hidden by setting showAddTaskForm to false.
 - An alert is displayed to notify the user that the task has been updated successfully.
 
+![Screenshot 2](/public/Images/update.png)
+
 ## Delete Task:
 
 - When the user clicks the delete button for a task, the deleteTask function is called with the corresponding task ID.
@@ -54,6 +56,8 @@ TaskManager is a simple task management application built with React. It allows 
 - If the user confirms the deletion, the task is removed from the tasks array using the filter method.
 - The updated tasks array is saved using the saveTasks function.
 - An alert is displayed to notify the user that the task has been deleted successfully.
+
+![Screenshot 1](/public/Images/deletetask.png)
 
 ## Upcoming Tasks:
 
@@ -66,3 +70,9 @@ TaskManager is a simple task management application built with React. It allows 
 ## Completed Tasks:
 
 - Tasks that have been marked as completed are categorized as completed tasks. These tasks are displayed separately in the task list or can be filtered to view only completed tasks.
+
+![Screenshot 1](/public/Images/completed.png)
+
+## Search
+
+![Screenshot 1](/public/Images/search.png)
